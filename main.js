@@ -42,10 +42,10 @@ function randomValueFromArray(array){
     yItem=randomValueFromArray(insertY);
     zItem=randomValueFromArray(insertZ);
     //place the random string in the storyText file.
-    newStory=newStory.replace(":insertx:",xItem); 
-    newStory=newStory.replace('insertx',xItem); 
-    newStory=newStory.replace('inserty',yItem); 
-    newStory=newStory.replace('insertz',zItem); 
+    newStory=newStory.replace(/:insertx:/g,xItem); 
+   // newStory=newStory.replace('insertx',xItem); 
+    newStory=newStory.replace(/:inserty:/g,yItem); 
+    newStory=newStory.replace(/:insertz:/g,zItem); 
 
     //condition here to change name from the default name setting.
     if(customName.value !== '') {
@@ -60,12 +60,12 @@ function randomValueFromArray(array){
       //convert from pounds to stone
       var weightInStone=poundsToStone(weight);
       //replace it to the story text
-      newStory=newStory.replace('300',weightInStone);
-      newStory=newStory.replace('pounds','stone');
+      newStory=newStory.replace(/300/g,weightInStone);
+      newStory=newStory.replace(/pounds/g,'stone');
       //convert from fahrenheit to centigrade
       var tempInCentigrade=fahrenheitToCentigrade(temperature); 
-      newStory=newStory.replace('94',tempInCentigrade);
-      newStory=newStory.replace('fahrenheit','centigrade');
+      newStory=newStory.replace(/94/g,tempInCentigrade);
+      newStory=newStory.replace(/fahrenheit/g,'centigrade');
     }
 
     
