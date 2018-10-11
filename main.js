@@ -51,7 +51,7 @@ function randomValueFromArray(array){
     if(customName.value !== '') {
       var name = customName.value;
       //replace bob here
-      storyText=storyText.replace('Bob',name);
+      storyText=storyText.replace(/Bob/g,name);
     }
   
     if(document.getElementById("uk").checked) {
